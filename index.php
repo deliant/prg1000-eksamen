@@ -22,8 +22,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Bjarum Airlines</a>
     </div>
@@ -69,6 +69,5 @@
     </ul>
   </div>
 </nav>
-
 </body>
 </html>
