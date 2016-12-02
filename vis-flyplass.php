@@ -28,9 +28,9 @@
       <a class="navbar-brand" href="#">Bjarum Airlines</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li class="active"><a href="index.php">Forsiden</a></li>
+      <li><a href="index.php">Forsiden</a></li>
       <li class="divider-vertical"></li>
-      <li class="dropdown">
+      <li class="dropdown active">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flyplasser
           <b class="caret"></b>
@@ -69,5 +69,22 @@
     </ul>
   </div>
 </nav>
+<div class="container">
+  <div class="page-header">
+    <h1>Bjarum Airlines <small>Flyplasser</small></h1>
+  </div>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Flyplasser</div>
+
+    <!-- Table -->
+    <table class="table">
+      <?php
+      include ("libs/vis-flyplass.php");
+      visFlyplass();
+      ?>
+    </table>
+  </div>
+</div>
 </body>
 </html>
