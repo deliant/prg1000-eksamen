@@ -3,7 +3,7 @@ function visFlyrute() {
   // Åpne filen flyrute.txt
   $fil = fopen("data/flyrute.txt", "r");
   // Skriv data i flyrute.txt til en array og lag HTML table
-  print("<tr><td><strong>Fra flyplass</strong></td><td><strong>Til flyplass</strong></td></tr>");
+  print("<tr><th>Fra flyplass</th><th>Til flyplass</th></tr>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
