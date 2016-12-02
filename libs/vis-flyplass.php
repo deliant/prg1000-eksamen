@@ -3,7 +3,7 @@ function visFlyplass() {
   // Åpne filen flyplass.txt
   $fil = fopen("data/flyplass.txt", "r");
   // Skriv data i flyplass.txt til en array og lag HTML table
-  print("<tr><td><strong>Flyplasskode</strong></td><td><strong>Flyplassnavn</strong></td></tr>");
+  print("<tr><th>Flyplasskode</th><th>Flyplassnavn</th></tr>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);

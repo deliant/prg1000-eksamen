@@ -4,7 +4,7 @@ function visAvgang() {
   // Åpne filen flygning.txt
   $fil = fopen("data/flygning.txt", "r");
   // Skriv data i flygning.txt til en array og lag HTML table
-  print("<tr><td><strong>Flightnr</strong></td><td><strong>Fra flyplass</strong></td><td><strong>Til flyplass</strong></td><td><strong>Dato</strong></td></tr>");
+  print("<tr><th>Flightnr</th><th>Fra flyplass</th><th>Til flyplass</th><th>Dato</th></tr>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
