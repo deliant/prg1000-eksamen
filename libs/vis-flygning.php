@@ -8,7 +8,7 @@ function visFlygning() {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
       $tekst = array_map('trim', $tekst);
-      print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><<td>$tekst[2]</td><<td>$tekst[3]</td></tr>");
+      print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><td>$tekst[2]</td><td>$tekst[3]</td></tr>");
     }
   }
   // Lukk filen flygning.txt

@@ -11,7 +11,7 @@ function visAnkomst() {
       $tekst = array_map('trim', $tekst);
       /* Ikke ferdig */
       if(in_array($flyplassnavn, $tekst)) {
-        print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><<td>$tekst[2]</td><<td>$tekst[3]</td></tr>");
+        print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><td>$tekst[2]</td><td>$tekst[3]</td></tr>");
       }
     }
   }
