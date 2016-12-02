@@ -82,7 +82,7 @@
     <!-- Table -->
     <table class="table">
       <?php
-      include ("libs/vis-flyrute.php");
+      include("libs/vis-flyrute.php");
       visFlyrute();
       ?>
     </table>
