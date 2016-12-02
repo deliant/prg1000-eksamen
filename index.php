@@ -47,8 +47,8 @@
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="vis-flyruter.php">Vis</a></li>
-          <li><a href="reg-flyruter.php">Registrer</a></li>
+          <li><a href="vis-flyrute.php">Vis</a></li>
+          <li><a href="reg-flyrute.php">Registrer</a></li>
         </ul>
       </li>
       <li class="divider-vertical"></li>
@@ -58,14 +58,14 @@
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="vis-flygninger.php">Vis</a></li>
-          <li><a href="reg-flygninger.php">Registrer</a></li>
+          <li><a href="vis-flygning.php">Vis</a></li>
+          <li><a href="reg-flygning.php">Registrer</a></li>
         </ul>
       </li>
       <li class="divider-vertical"></li>
-      <li><a href="vis-avganger.php">Avganger</a></li>
+      <li><a href="vis-avgang.php">Avganger</a></li>
       <li class="divider-vertical"></li>
-      <li><a href="vis-ankomster.php">Ankomster</a></li>
+      <li><a href="vis-ankomst.php">Ankomster</a></li>
     </ul>
   </div>
 </nav>
