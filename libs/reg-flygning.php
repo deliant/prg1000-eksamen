@@ -1,8 +1,4 @@
 <?php
-$flightnr = trim($_POST["flightnr"]);
-$fraflyplass = trim($_POST["fraflyplass"]);
-$tilflyplass = trim($_POST["tilflyplass"]);
-$dato = trim($_POST["dato"]);
 function regFlygning($flightnr, $fraflyplass, $tilflyplass, $dato) {
   // Sjekk at tekstfeltene har input
   if(!empty($flightnr) &&!empty($fraflyplass) && !empty($tilflyplass) && !empty($dato)) {

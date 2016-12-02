@@ -1,6 +1,4 @@
 <?php
-$fraflyplass = trim($_POST["fraflyplass"]);
-$tilflyplass = trim($_POST["tilflyplass"]);
 function regFlyrute($fraflyplass, $tilflyplass) {
   // Sjekk at tekstfeltene har input
   if(!empty($fraflyplass) && !empty($tilflyplass)) {
