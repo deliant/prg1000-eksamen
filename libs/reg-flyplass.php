@@ -8,12 +8,12 @@ function regFlyplass($flyplasskode, $flyplassnavn) {
     $fil = fopen("data/flyplass.txt", "a");
     // Skriv til filen flyplass.txt
     fwrite($fil, "$flyplasskode;$flyplassnavn\n");
-    print("<span class='label label-success'>" .$flyplassnavn. " registrert i flyplassdatabasen.</span>");
+    print("<div class='alert alert-success' role='alert'>" .$flyplassnavn. " registrert i flyplassdatabasen.</div>");
     // Lukk filen flyplass.txt
     fclose($fil);
   }
   else {
-    print("<span class='label label-danger'>Mangler gyldig tekstfelt, vennligst fyll inn.</span>");
+    print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
   }
 }
 ?>

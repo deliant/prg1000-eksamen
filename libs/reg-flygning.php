@@ -10,11 +10,11 @@ function regFlygning($flightnr, $fraflyplass, $tilflyplass, $dato) {
     $fil = fopen("data/flygning.txt", "a");
     // Skriv til filen flygning.txt
     fwrite($fil, "$flightnr;$fraflyplass;$tilflyplass;$dato\n");
-    print("<span class='label label-success'>" Flygningen  . $fraflyplass . " - "  . $tilflyplass . " (" . $flightnr . ") som utføres " . $dato . " registrert i flygningsdatabasen.</span>");
+    print("<div class='alert alert-success' role='alert'>" Flygningen  . $fraflyplass . " - "  . $tilflyplass . " (" . $flightnr . ") som utføres " . $dato . " registrert i flygningsdatabasen.</div>");
     // Lukk filen flygning.txt
     fclose($fil);
   }
   else {
-    print("<span class='label label-danger'>Mangler gyldig tekstfelt, vennligst fyll inn.</span>");
+    print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
   }
 }
