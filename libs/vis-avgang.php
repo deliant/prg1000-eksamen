@@ -1,9 +1,8 @@
 <?php
-function visAvgangg() {
+function visAvgang() {
   // Åpne filen flygning.txt
   $fil = fopen("data/flygning.txt", "r");
   // Skriv data i flygning.txt til en array og lag HTML table
-  print("<table width='100%'>");
   print("<tr><td><strong>Flightnr</strong></td><td><strong>Fra flyplass</strong></td><td><strong>Til flyplass</strong></td><td><strong>Dato</strong></td></tr>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
@@ -15,7 +14,6 @@ function visAvgangg() {
       }
     }
   }
-  print("</table>");
   // Lukk filen flygning.txt
   fclose($fil);
 }

@@ -1,6 +1,4 @@
 <?php
-$flyplasskode = trim($_POST["flyplasskode"]);
-$flyplassnavn = trim($_POST["flyplassnavn"]);
 function regFlyplass($flyplasskode, $flyplassnavn) {
   // Sjekk at tekstfeltene har input
   if(!empty($flyplasskode) && !empty($flyplassnavn)) {
