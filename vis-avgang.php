@@ -90,7 +90,7 @@
     <table class="table">
       <?php
       include("libs/vis-avgang.php");
-      visAvgang()
+      visAvgang();
       ?>
     </table>
   </div>
