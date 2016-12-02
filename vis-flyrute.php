@@ -78,14 +78,15 @@
     <div class="panel-heading">
       <h3 class="panel-title">Flyruter</h3>
     </div>
-
-    <!-- Table -->
-    <table class="table-hover" width="100%">
-      <?php
-      include("libs/vis-flyrute.php");
-      visFlyrute();
-      ?>
-    </table>
+    <div class="panel-body">
+      <!-- Table -->
+      <table class="table-hover" width="100%">
+        <?php
+        include("libs/vis-flyrute.php");
+        visFlyrute();
+        ?>
+      </table>
+    </div>
   </div>
 </div>
 </body>
