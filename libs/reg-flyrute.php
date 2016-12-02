@@ -8,12 +8,12 @@ function regFlyrute($fraflyplass, $tilflyplass) {
     $fil = fopen("data/flyrute.txt", "a");
     // Skriv til filen flyrute.txt
     fwrite($fil, "$fraflyplass;$tilflyplass\n");
-    print("<span class='label label-success'>" Ruten  . $fraflyplass . " - "  . $tilflyplass . " registrert i flyrutedatabasen.</span>");
+    print("<div class='alert alert-success' role='alert'>" Ruten  . $fraflyplass . " - "  . $tilflyplass . " registrert i flyrutedatabasen.</div>");
     // Lukk filen flyrute.txt
     fclose($fil);
   }
   else {
-    print("<span class='label label-danger'>Mangler gyldig tekstfelt, vennligst fyll inn.</span>");
+    print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
   }
 }
 ?>
