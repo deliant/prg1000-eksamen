@@ -30,7 +30,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php">Forsiden</a></li>
       <li class="divider-vertical"></li>
-      <li class="dropdown active">
+      <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flyplasser
           <b class="caret"></b>
@@ -63,7 +63,7 @@
         </ul>
       </li>
       <li class="divider-vertical"></li>
-      <li><a href="vis-avgang.php">Avganger</a></li>
+      <li class="active"><a href="vis-avgang.php">Avganger</a></li>
       <li class="divider-vertical"></li>
       <li><a href="vis-ankomst.php">Ankomster</a></li>
     </ul>
@@ -71,19 +71,26 @@
 </nav>
 <div class="container">
   <div class="page-header">
-    <h1>Bjarum Airlines <small>Flyplasser</small></h1>
+    <h1>Bjarum Airlines <small>Avganger</small></h1>
   </div>
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">
-      <h3 class="panel-title">Flyplasser</h3>
+      <h3 class="panel-title">Avganger</h3>
     </div>
+
+    <div class="panel-body">
+      <!-- Husk onsubmit="return validerRegFlyplass()" -->
+      <form method="post" id="visavgang" name="visavgang" action="">
+        <label>Flyplassnavn:</label><input type="text" id="flyplassnavn" name="flyplassnavn" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
+        <label>&nbsp;</label><input type="submit" value="Søk" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
+      </form>
 
     <!-- Table -->
     <table class="table">
       <?php
-      include("libs/vis-flyplass.php");
-      visFlyplass();
+      include("libs/vis-avgang.php");
+      visAvgang();
       ?>
     </table>
   </div>

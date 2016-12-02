@@ -10,6 +10,7 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-theme.css" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <script src="js/elements.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -30,7 +31,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php">Forsiden</a></li>
       <li class="divider-vertical"></li>
-      <li class="dropdown active">
+      <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flyplasser
           <b class="caret"></b>
@@ -52,7 +53,7 @@
         </ul>
       </li>
       <li class="divider-vertical"></li>
-      <li class="dropdown">
+      <li class="dropdown active">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flygninger
           <b class="caret"></b>
@@ -71,21 +72,32 @@
 </nav>
 <div class="container">
   <div class="page-header">
-    <h1>Bjarum Airlines <small>Flyplasser</small></h1>
+    <h1>Bjarum Airlines <small>Registrer flygning</small></h1>
   </div>
   <div class="panel panel-default">
-    <!-- Default panel contents -->
     <div class="panel-heading">
-      <h3 class="panel-title">Flyplasser</h3>
+      <h3 class="panel-title">Fyll inn</h3>
     </div>
-
-    <!-- Table -->
-    <table class="table">
+    <div class="panel-body">
+      <!-- Husk onsubmit="return validerRegFlygning()" -->
+      <form method="post" id="regflygning" name="regflygning" action="">
+        <label>Flightnr</label><input type="text" id="flightnr" name="flightnr" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
+        <label>Fra flyplass:</label><input type="text" id="fraflyplass" name="fraflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
+        <label>Til Flyplass:</label><input type="text" id="tilflyplass" name="tilflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
+        <label>Dato:</label><input type="text" id="dato" name="dato" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
+        <label>&nbsp;</label><input type="submit" value="Registrer" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
+      </form>
       <?php
-      include("libs/vis-flyplass.php");
-      visFlyplass();
+      include("libs/reg-flygning.php");
+      if(isset($_POST['submit'])) {
+        $flightnr = trim($_POST["flightnr"]);
+        $fraflyplass = trim($_POST["fraflyplass"]);
+        $tilflyplass = trim($_POST["tilflyplass"]);
+        $dato = trim($_POST["dato"]);
+        regFlygning($flightnr, $fraflyplass, $tilflyplass, $dato);
+      }
       ?>
-    </table>
+    </div>
   </div>
 </div>
 </body>
