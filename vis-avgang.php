@@ -81,7 +81,7 @@
 
     <div class="panel-body">
       <!-- Husk onsubmit="return validerRegFlyplass()" -->
-      <form method="post" id="regflyplass" name="regflyplass" action="">
+      <form method="post" id="visavgang" name="visavgang" action="">
         <label>Flyplassnavn:</label><input type="text" id="flyplassnavn" name="flyplassnavn" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
         <label>&nbsp;</label><input type="submit" value="Søk" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
       </form>
