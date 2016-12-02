@@ -82,7 +82,7 @@
     <!-- Table -->
     <table class="table">
       <?php
-      include ("libs/vis-flyplass.php");
+      include("libs/vis-flyplass.php");
       visFlyplass();
       ?>
     </table>
