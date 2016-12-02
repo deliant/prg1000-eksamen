@@ -87,10 +87,12 @@
       </form>
 
       <!-- Table -->
-      <table class="table">
+      <table class="table-hover" width="100%">
         <?php
         include("libs/vis-ankomst.php");
-        visAnkomst();
+        if(isset($_POST['submit'])) {
+          visAnkomst();
+        }
         ?>
       </table>
     </div>

@@ -80,7 +80,7 @@
     </div>
 
     <!-- Table -->
-    <table class="table">
+    <table class="table-hover" width="100%">
       <?php
       include("libs/vis-flyplass.php");
       visFlyplass();
