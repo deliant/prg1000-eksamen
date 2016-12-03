@@ -8,3 +8,4 @@ function regFlygning($flightnr, $fraflyplass, $tilflyplass, $dato) {
   // Lukk filen flygning.txt
   fclose($fil);
 }
+?>
