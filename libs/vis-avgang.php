@@ -1,5 +1,6 @@
 <?php
 function visAvgang() {
+  $flyplasskode = trim($_POST["flyplasskode"]);
   // Åpne filen flygning.txt
   $fil = fopen("data/flygning.txt", "r");
   // Skriv data i flygning.txt til en array og lag HTML table
