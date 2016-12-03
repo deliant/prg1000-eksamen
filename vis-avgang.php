@@ -89,6 +89,7 @@
         <?php
         include("libs/vis-avgang.php");
         if(isset($_POST["submit"])) {
+          $flyplasskode = trim($_POST["flyplasskode"]);
           if(!empty($flyplasskode)) {
             visAvgang();
           }
