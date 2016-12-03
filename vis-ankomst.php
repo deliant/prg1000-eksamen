@@ -92,6 +92,9 @@
           if(!empty($flyplasskode)) {
             visAnkomst();
           }
+          else {
+            print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
+          }
         }
         ?>
       </table>
