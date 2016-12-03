@@ -89,7 +89,9 @@
         <?php
         include("libs/vis-ankomst.php");
         if(isset($_POST["submit"])) {
-          visAnkomst();
+          if(!empty($flyplasskode)) {
+            visAnkomst();
+          }
         }
         ?>
       </table>
