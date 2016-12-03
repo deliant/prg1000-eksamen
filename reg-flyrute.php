@@ -87,10 +87,15 @@
       </form>
       <?php
       include("libs/reg-flyrute.php");
-      if(isset($_POST['submit'])) {
+      if(isset($_POST["submit"])) {
         $fraflyplass = trim($_POST["fraflyplass"]);
         $tilflyplass = trim($_POST["tilflyplass"]);
-        regFlyrute($fraflyplass, $tilflyplass);
+        if(!empty($fraflyplass) && !empty($tilflyplass)) {
+          regFlyrute($fraflyplass, $tilflyplass);
+        }
+        else {
+          print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
+        }
       }
       ?>
     </div>
