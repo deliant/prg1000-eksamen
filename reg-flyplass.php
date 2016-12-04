@@ -79,7 +79,6 @@
       <h3 class="panel-title">Fyll inn</h3>
     </div>
     <div class="panel-body">
-      <!-- Husk onsubmit="return validerRegFlyplass()" -->
       <form method="post" id="regflyplass" name="regflyplass" action="">
         <label>Flyplasskode:</label><input type="text" id="flyplasskode" name="flyplasskode" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
         <label>Flyplassnavn:</label><input type="text" id="flyplassnavn" name="flyplassnavn" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
@@ -87,14 +86,18 @@
       </form>
       <?php
       include("libs/reg-flyplass.php");
+      include("libs/validering.php");
       if(isset($_POST["submit"])) {
         $flyplasskode = trim($_POST["flyplasskode"]);
         $flyplassnavn = trim($_POST["flyplassnavn"]);
         if(!empty($flyplasskode) && !empty($flyplassnavn)) {
-          regFlyplass($flyplasskode, $flyplassnavn);
+          $lovligFlyplass = validerFlyplass();
+          if($lovligFlyplass) {
+            regFlyplass($flyplasskode, $flyplassnavn);
+          }
         }
         else {
-          print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
+          print("<div class='alert alert-danger' role='alert'>Skjemaet er ikke fyllt ut.</div>");
         }
       }
       ?>
