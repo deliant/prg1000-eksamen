@@ -9,11 +9,9 @@ function visAnkomst() {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
       $tekst = array_map('trim', $tekst);
-      /* Ikke ferdig */
-      if(in_array($flyplasskode, $tekst)) {
-        if($tekst[2] == $flyplasskode) {
-          print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><td>$tekst[2]</td><td>$tekst[3]</td></tr>");
-        }
+      /* Finn match for søk */
+      if($tekst[2] == $flyplasskode) {
+        print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><td>$tekst[2]</td><td>$tekst[3]</td></tr>");
       }
     }
   }
