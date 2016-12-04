@@ -65,7 +65,10 @@ function validerFlyrute($fraflyplass, $tilflyplass) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
       $tekst = array_map('trim', $tekst);
-      if(!$tekst[0] == $fraflyplass || !$tekst[0] == $tilflyplass) {
+      if($tekst[0] != $fraflyplass) {
+        $lovligFlyrute = false;
+      }
+      if($tekst[0] != $tilflyplass) {
         $lovligFlyrute = false;
       }
     }
@@ -74,4 +77,6 @@ function validerFlyrute($fraflyplass, $tilflyplass) {
   // Returner verdi for valideringen
   return $lovligFlyrute;
 }
+
+
 ?>
