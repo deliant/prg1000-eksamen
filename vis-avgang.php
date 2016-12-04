@@ -81,15 +81,21 @@
     <div class="panel-body">
       <!-- Husk onsubmit="return validerRegFlyplass()" -->
       <form method="post" id="visavgang" name="visavgang" action="">
-        <label>Flyplassnavn:</label><input type="text" id="flyplassnavn" name="flyplassnavn" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
+        <label>Flyplasskode:</label><input type="text" id="flyplasskode" name="flyplasskode" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
         <label>&nbsp;</label><input type="submit" value="Søk" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
       </form>
       <!-- Table -->
       <table class="table-hover" width="100%">
         <?php
         include("libs/vis-avgang.php");
-        if(isset($_POST['submit'])) {
-          visAvgang();
+        if(isset($_POST["submit"])) {
+          $flyplasskode = trim($_POST["flyplasskode"]);
+          if(!empty($flyplasskode)) {
+            visAvgang();
+          }
+          else {
+            print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
+          }
         }
         ?>
       </table>

@@ -89,12 +89,17 @@
       </form>
       <?php
       include("libs/reg-flygning.php");
-      if(isset($_POST['submit'])) {
+      if(isset($_POST["submit"])) {
         $flightnr = trim($_POST["flightnr"]);
         $fraflyplass = trim($_POST["fraflyplass"]);
         $tilflyplass = trim($_POST["tilflyplass"]);
         $dato = trim($_POST["dato"]);
-        regFlygning($flightnr, $fraflyplass, $tilflyplass, $dato);
+        if(!empty($flightnr) && !empty($fraflyplass) && !empty($tilflyplass) && !empty($dato)) {
+          regFlygning($flightnr, $fraflyplass, $tilflyplass, $dato);
+        }
+        else {
+          print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
+        }
       }
       ?>
     </div>

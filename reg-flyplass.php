@@ -87,10 +87,15 @@
       </form>
       <?php
       include("libs/reg-flyplass.php");
-      if(isset($_POST['submit'])) {
+      if(isset($_POST["submit"])) {
         $flyplasskode = trim($_POST["flyplasskode"]);
         $flyplassnavn = trim($_POST["flyplassnavn"]);
-        regFlyplass($flyplasskode, $flyplassnavn);
+        if(!empty($flyplasskode) && !empty($flyplassnavn)) {
+          regFlyplass($flyplasskode, $flyplassnavn);
+        }
+        else {
+          print("<div class='alert alert-danger' role='alert'>Mangler gyldig tekstfelt, vennligst fyll inn.</div>");
+        }
       }
       ?>
     </div>
