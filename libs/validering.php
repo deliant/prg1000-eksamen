@@ -78,5 +78,37 @@ function validerFlyrute($fraflyplass, $tilflyplass) {
   return $lovligFlyrute;
 }
 
-
+function validerFlygning($flightnr, $fraflyplass, $tilflyplass, $dato) {
+  $lovligFlygning = true;
+  // Sjekk at form er fyllt ut
+  if(!$flightnr || !$fraflyplass || !$tilflyplass || !$dato) {
+    $lovligFlygning = false;
+  }
+  // Sjekk at flightnr er unik
+  $fil = fopen("data/flygning.txt", "r");
+  while($tekstlinje = fgets($fil)) {
+    if($tekstlinje != "") {
+      $tekst = explode(';', $tekstlinje);
+      $tekst = array_map('trim', $tekst);
+      if($tekst[0] == $flightnr) {
+        $lovligFlygning = false;
+      }
+    }
+  }
+  fclose($fil);
+  // Sjekk at kombinasjonen fraflyplass og tilflyplass er registrert i FLYRUTE.TXT
+  $fil = fopen("data/flyrute.txt", "r");
+  while($tekstlinje = fgets($fil)) {
+    if($tekstlinje != "") {
+      $tekst = explode(';', $tekstlinje);
+      $tekst = array_map('trim', $tekst);
+      if($tekst[0] != $fraflyplass || $tekst[1] != $tilflyplass) {
+        $lovligFlygning = false;
+      }
+    }
+  }
+  fclose($fil);
+  // Returner verdi for valideringen
+  return $lovligFlygning;
+}
 ?>
