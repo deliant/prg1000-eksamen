@@ -1,6 +1,3 @@
-/**
- * Created by marius on 04.11.16.
- */
 function fokus(element) {
   element.style.background="yellow";
 }
@@ -10,30 +7,29 @@ function mistetFokus(element) {
 }
 
 function musInn(element) {
-  if (element == document.getElementById("klassekode")) {
-    document.getElementById("melding").innerHTML="Klassekoder har to store bokstaver og ett tall";
+  if (element == document.getElementById("flyplasskode")) {
+    document.getElementById("melding").innerHTML="Flyplasskode til flyplassen. Tre små bokstaver. (må være unik)";
   }
-  if (element == document.getElementById("klassenavn")) {
-    document.getElementById("melding").innerHTML="Klassenavnet er det fullstendige navnet på klassen (mindre enn 20 tegn)";
+  if (element == document.getElementById("flyplassnavn")) {
+    document.getElementById("melding").innerHTML="Flyplassnavnet er det fullstendige navnet på flyplassen.";
   }
-  if (element == document.getElementById("brukernavn")) {
-    document.getElementById("melding").innerHTML="Brukernavnet til studenten (to små bokstaver)";
+  if (element == document.getElementById("fraflyplass")) {
+    document.getElementById("melding").innerHTML="Flyplassen ruten reiser til. Tre små bokstaver. (må være unik)";
   }
-  if (element == document.getElementById("fornavn")) {
-    document.getElementById("melding").innerHTML="Fornavnet til studenten (mindre enn 18 tegn, ikke tall)";
+  if (element == document.getElementById("tilflyplass")) {
+    document.getElementById("melding").innerHTML="Flyplassen ruten reiser fra. Tre små bokstaver. (må være unik)";
   }
-  if (element == document.getElementById("etternavn")) {
-    document.getElementById("melding").innerHTML="Etternavnet til studenten (mindre enn 18 tegn, ikke tall)";
+  if (element == document.getElementById("flightnr")) {
+    document.getElementById("melding").innerHTML="Flightnr på flygningen. To små bokstaver, tre tall. (må være unik)";
+  }
+  if (element == document.getElementById("dato")) {
+    document.getElementById("melding").innerHTML="Dato, fylles ut i formatet ÅÅÅÅ-MM-DD.";
   }
 }
 
 function musUt() {
   document.getElementById("melding").innerHTML="";
   document.getElementById("respons").innerHTML="";
-}
-
-function storeBokstaver(element) {
-  element.value=element.value.toUpperCase();
 }
 
 function smaaBokstaver(element) {
