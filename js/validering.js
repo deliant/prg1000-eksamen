@@ -25,69 +25,41 @@ function validerFlyplasskode() {
       document.getElementById("melding").innerHTML="Flyplasskode innholder andre karakterer enn a-z.";
     }
   }
-  //document.getElementById("melding").innerHTML=feilMelding;
   return lovligFlyplasskode;
-}
-
-function validerFlyruteFra(fraflyplass) {
-  var tegn1, tegn2, tegn3;
-  var lovligFlyruteFra = true;
-  if(!fraflyplass) {
-    lovligFlyruteFra = false;
-    document.getElementById("melding").innerHTML="Flyplasskode i 'Fra flyplass' ikke fyllt ut.<br />";
-  }
-  else if(fraflyplass.length != 3) {
-    lovligFlyruteFra = false;
-    document.getElementById("melding").innerHTML="Flyplasskode i 'Fra flyplass' har ikke riktig antall bokstaver. (3 små)<br />";
-  }
-  else {
-    tegn1 = fraflyplass.substr(0,1);
-    tegn2 = fraflyplass.substr(1,1);
-    tegn3 = fraflyplass.substr(2,1);
-
-    if(tegn1 < "a" || tegn1 > "z" || tegn2 < "a" || tegn2 > "z" || tegn3 < "a" || tegn3 > "z") {
-      lovligFlyruteFra = false;
-      document.getElementById("melding").innerHTML="Flyplasskode i 'Fra flyplass' innholder andre karakterer enn a-z.";
-    }
-  }
-  //document.getElementById("melding").innerHTML=feilMelding;
-  return lovligFlyruteFra;
-}
-
-function validerFlyruteTil(tilflyplass) {
-  var tegn1, tegn2, tegn3;
-  var lovligFlyruteTil = true;
-  if(!tilflyplass) {
-    lovligFlyruteTil = false;
-    document.getElementById("melding").innerHTML="Flyplasskode i 'Til flyplass' ikke fyllt ut.<br />";
-  }
-  else if(tilflyplass.length != 3) {
-    lovligFlyruteTil = false;
-    document.getElementById("melding").innerHTML="Flyplasskode i 'Til flyplass' har ikke riktig antall bokstaver. (3 små)<br />";
-  }
-  else {
-    tegn1 = tilflyplass.substr(0,1);
-    tegn2 = tilflyplass.substr(1,1);
-    tegn3 = tilflyplass.substr(2,1);
-
-    if(tegn1 < "a" || tegn1 > "z" || tegn2 < "a" || tegn2 > "z" || tegn3 < "a" || tegn3 > "z") {
-      lovligFlyruteTil = false;
-      document.getElementById("melding").innerHTML="Flyplasskode i 'Til flyplass' innholder andre karakterer enn a-z.";
-    }
-  }
-  //document.getElementById("melding").innerHTML=feilMelding;
-  return lovligFlyruteTil;
 }
 
 function validerFlyrute() {
   var fraflyplass = document.getElementById("fraflyplass").value;
   var tilflyplass = document.getElementById("tilflyplass").value;
-  var lovligFlyruteFra = validerFlyruteFra(fraflyplass);
-  var lovligFlyruteTil = validerFlyruteTil(tilflyplass);
-  if(lovligFlyruteFra && lovligFlyruteTil) {
-    return true;
+  var frategn1, frategn2, frategn3, tiltegn1, tiltegn2, tiltegn3;
+  var feilMelding;
+  var lovligFlyrute = true;
+  feilMelding = "";
+  if(fraflyplass.length != 3) {
+    lovligFlyrute = false;
+    document.getElementById("melding").innerHTML="Flyplasskode i 'Fra flyplass' har ikke riktig antall bokstaver. (3 små)<br />";
+  }
+  else if(tilflyplass.length != 3) {
+    lovligFlyrute = false;
+    document.getElementById("melding").innerHTML="Flyplasskode i 'Til flyplass' har ikke riktig antall bokstaver. (3 små)<br />";
   }
   else {
-    return false;
+    frategn1 = fraflyplass.substr(0,1);
+    frategn2 = fraflyplass.substr(1,1);
+    frategn3 = fraflyplass.substr(2,1);
+
+    if(frategn1 < "a" || frategn1 > "z" || frategn2 < "a" || frategn2 > "z" || frategn3 < "a" || frategn3 > "z") {
+      lovligFlyrute = false;
+      document.getElementById("melding").innerHTML="Flyplasskode i 'Fra flyplass' innholder andre karakterer enn a-z.<br />";
+    }
+    tiltegn1 = tilflyplass.substr(0,1);
+    tiltegn2 = tilflyplass.substr(1,1);
+    tiltegn3 = tilflyplass.substr(2,1);
+
+    if(tiltegn1 < "a" || tiltegn1 > "z" || tiltegn2 < "a" || tiltegn2 > "z" || tiltegn3 < "a" || tiltegn3 > "z") {
+      lovligFlyrute = false;
+      document.getElementById("melding").innerHTML="Flyplasskode i 'Til flyplass' innholder andre karakterer enn a-z.<br />";
+    }
   }
+  return lovligFlyrute;
 }
