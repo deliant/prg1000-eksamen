@@ -96,22 +96,18 @@ function validerFlyruteUnik($fraflyplass, $tilflyplass) {
 
 function validerFlightnrFormat($flightnr) {
   $lovligFlightnrFormat = true;
-  // Sjekk at flightnr er 5 bokstaver
+  // Sjekk at flightnr er 5 tegn
   if(strlen($flightnr) != 5) {
     $lovligFlightnrFormat = false;
   }
-  // Sjekk at flightnr inneholder nummer
-  else if(!is_numeric($flightnr)) {
-    $lovligFlightnrFormat = false;
-  }
-  // Sjekk at flightnr innholder 2 bokstaver a-z og 3 tall
   else {
+    // Sjekk at flightnr innholder 2 bokstaver a-z og 3 tall
     $tegn1 = substr($flightnr,0,1);
     $tegn2 = substr($flightnr,1,1);
     $tegn3 = substr($flightnr,2,1);
     $tegn4 = substr($flightnr,3,1);
     $tegn5 = substr($flightnr,4,1);
-    if ($tegn1 < "a" || $tegn1 > "z" || $tegn2 < "a" || $tegn2 > "z" || $tegn3 < "1" || $tegn3 > "9" || $tegn4 < "1" || $tegn4 > "9" || $tegn5 < "1" || $tegn5 > "9") {
+    if ($tegn1 < "a" || $tegn1 > "z" || $tegn2 < "a" || $tegn2 > "z" || $tegn3 < "0" || $tegn3 > "9" || $tegn4 < "0" || $tegn4 > "9" || $tegn5 < "0" || $tegn5 > "9") {
       $lovligFlightnrFormat = false;
     }
   }
