@@ -14,10 +14,10 @@ function musInn(element) {
     document.getElementById("melding").innerHTML="Flyplassnavnet er det fullstendige navnet på flyplassen.";
   }
   if (element == document.getElementById("fraflyplass")) {
-    document.getElementById("melding").innerHTML="Flyplassen ruten reiser til. Tre små bokstaver. (må være unik)";
+    document.getElementById("melding").innerHTML="Flyplassen ruten reiser fra. Tre små bokstaver. (må være unik)";
   }
   if (element == document.getElementById("tilflyplass")) {
-    document.getElementById("melding").innerHTML="Flyplassen ruten reiser fra. Tre små bokstaver. (må være unik)";
+    document.getElementById("melding").innerHTML="Flyplassen ruten reiser til. Tre små bokstaver. (må være unik)";
   }
   if (element == document.getElementById("flightnr")) {
     document.getElementById("melding").innerHTML="Flightnr på flygningen. To små bokstaver, tre tall. (må være unik)";
