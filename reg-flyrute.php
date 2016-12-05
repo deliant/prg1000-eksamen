@@ -82,8 +82,8 @@
     </div>
     <div class="panel-body">
       <form method="post" id="regflyrute" name="regflyrute" onsubmit="return validerFlyrute()" action="">
-        <label>Fra flyplass:</label><input type="text" id="fraflyplass" name="fraflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="vis(this.value)" required /><br />
-        <label>Til flyplass:</label><input type="text" id="tilflyplass" name="tilflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" required /><br />
+        <label>Fra flyplass:</label><input type="text" id="fraflyplass" name="fraflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeydown="smaaBokstaver(this)" onkeyup="vis(this.value)" required /><br />
+        <label>Til flyplass:</label><input type="text" id="tilflyplass" name="tilflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
         <label>&nbsp;</label><input type="submit" value="Registrer" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
       </form>
       <?php
