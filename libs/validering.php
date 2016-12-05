@@ -94,8 +94,33 @@ function validerFlyruteUnik($fraflyplass, $tilflyplass) {
   return $lovligFlyruteUnik;
 }
 
-function validerFlygningFlightnr($flightnr) {
-  $lovligFlightnr = true;
+function validerFlightnrFormat($flightnr) {
+  $lovligFlightnrFormat = true;
+  // Sjekk at flightnr er 5 bokstaver
+  if(strlen($flightnr) != 5) {
+    $lovligFlightnrFormat = false;
+  }
+  // Sjekk at flightnr inneholder nummer
+  else if(!is_numeric($flightnr)) {
+    $lovligFlightnrFormat = false;
+  }
+  // Sjekk at flightnr innholder 2 bokstaver a-z og 3 tall
+  else {
+    $tegn1 = substr($flightnr,0,1);
+    $tegn2 = substr($flightnr,1,1);
+    $tegn3 = substr($flightnr,2,1);
+    $tegn4 = substr($flightnr,3,1);
+    $tegn5 = substr($flightnr,4,1);
+    if ($tegn1 < "a" || $tegn1 > "z" || $tegn2 < "a" || $tegn2 > "z" || $tegn3 < "1" || $tegn3 > "9" || $tegn4 < "1" || $tegn4 > "9" || $tegn5 < "1" || $tegn5 > "9") {
+      $lovligFlightnrFormat = false;
+    }
+  }
+  // Returner verdi for valideringen
+  return $lovligFlightnrFormat;
+}
+
+function validerFlightnrUnik($flightnr) {
+  $lovligFlightnrUnik = true;
   // Sjekk at flightnr er unik
   $fil = fopen("data/flygning.txt", "r");
   while($tekstlinje = fgets($fil)) {
@@ -103,13 +128,13 @@ function validerFlygningFlightnr($flightnr) {
       $tekst = explode(';', $tekstlinje);
       $tekst = array_map('trim', $tekst);
       if($tekst[0] == $flightnr) {
-        $lovligFlightnr = false;
+        $lovligFlightnrUnik = false;
       }
     }
   }
   fclose($fil);
   // Returner verdi for valideringen
-  return $lovligFlightnr;
+  return $lovligFlightnrUnik;
 }
 
 function validerFlygningFlyrute($fraflyplass, $tilflyplass) {
@@ -130,7 +155,7 @@ function validerFlygningFlyrute($fraflyplass, $tilflyplass) {
   return $lovligFlyrute;
 }
 
-function validerFlygningDato($dato) {
+function validerDato($dato) {
   $lovligDato = false;
   $split = array();
   if(preg_match("/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/", $dato, $split)) {
@@ -192,11 +217,15 @@ function validerFlygning() {
   $fraflyplass = trim($_POST["fraflyplass"]);
   $tilflyplass = trim($_POST["tilflyplass"]);
   $dato = trim($_POST["dato"]);
-  $lovligFlightnr = validerFlygningFlightnr($flightnr);
+  $lovligFlightnrFormat = validerFlightnrFormat($flightnr);
+  $lovligFlightnrUnik = validerFlightnrUnik($flightnr);
   $lovligFlyrute = validerFlygningFlyrute($fraflyplass, $tilflyplass);
-  $lovligDato = validerFlygningDato($dato);
+  $lovligDato = validerDato($dato);
   $feilmelding = "";
-  if(!$lovligFlightnr) {
+  if(!$lovligFlightnrFormat) {
+    $feilmelding .= "Formatet på flightnr er feil. Må være to små bokstaver og tre tall.<br />\n";
+  }
+  if(!$lovligFlightnrUnik) {
     $feilmelding .= "Flightnr finnes allerede i database. (må være unik)<br />\n";
   }
   if(!$lovligFlyrute) {
@@ -205,7 +234,7 @@ function validerFlygning() {
   if(!$lovligDato) {
     $feilmelding .= "Dato er ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
   }
-  if($lovligFlightnr && $lovligFlyrute && $lovligDato) {
+  if($lovligFlightnrFormat && $lovligFlightnrUnik && $lovligFlyrute && $lovligDato) {
     return true;
   }
   else {
