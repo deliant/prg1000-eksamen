@@ -11,6 +11,7 @@
   <link href="css/bootstrap-theme.css" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <script src="js/elements.js"></script>
+  <script src="js/validering.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -79,7 +80,7 @@
       <h3 class="panel-title">Fyll inn</h3>
     </div>
     <div class="panel-body">
-      <form method="post" id="regflyplass" name="regflyplass" action="">
+      <form method="post" id="regflyplass" name="regflyplass" onsubmit="return validerFlyplasskode()" action="">
         <label>Flyplasskode:</label><input type="text" id="flyplasskode" name="flyplasskode" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" required /><br />
         <label>Flyplassnavn:</label><input type="text" id="flyplassnavn" name="flyplassnavn" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
         <label>&nbsp;</label><input type="submit" value="Registrer" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
