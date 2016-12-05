@@ -29,7 +29,6 @@ function musInn(element) {
 
 function musUt() {
   document.getElementById("melding").innerHTML="";
-  document.getElementById("respons").innerHTML="";
 }
 
 function smaaBokstaver(element) {
