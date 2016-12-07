@@ -1,7 +1,7 @@
 <?php
 function selectAnkomst() {
   // Åpne filen flyplass.txt
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flyplass.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r");
   // Skriv data i flyplass.txt til en array og lag HTML select list
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
