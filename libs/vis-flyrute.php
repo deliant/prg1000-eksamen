@@ -1,7 +1,7 @@
 <?php
 function visFlyrute() {
   // Åpne filen flyrute.txt
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
   // Skriv data i flyrute.txt til en array og lag HTML table
   print("<tr><th>Fra flyplass</th><th>Til flyplass</th></tr>");
   while($tekstlinje = fgets($fil)) {

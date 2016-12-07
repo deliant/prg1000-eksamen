@@ -1,7 +1,7 @@
 <?php
 function regFlyrute($fraflyplass, $tilflyplass) {
   // Åpne filen flyrute.txt
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "a");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "w") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
   // Skriv til filen flyrute.txt
   fwrite($fil, "$fraflyplass;$tilflyplass\n");
   print("<div class='alert alert-success' role='alert'>Ruten " . $fraflyplass . " - "  . $tilflyplass . " registrert i flyrutedatabasen.</div>");
