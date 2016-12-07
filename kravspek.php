@@ -22,7 +22,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Bjarum Airlines"></a>
@@ -66,12 +66,12 @@
 </nav>
 <div class="container">
   <div class="page-header">
-    <h1>Bjarum Airlines <small>Sjekkliste</small></h1>
+    <h1>Bjarum Airlines <small>Kravspesifikasjon</small></h1>
   </div>
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">
-      <h3 class="panel-title">Ølgruppa</h3>
+      <h3 class="panel-title">Sjekkliste</h3>
     </div>
     <div class="panel-body">
       <!-- Table -->
@@ -91,14 +91,20 @@
         <tr><td>JS hendelser (fokus/mistet fokus, mus inn/mus ut)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>Asynkron kommunikasjon (registrer flyrute)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>Menybasert applikasjon med stilark</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
         <tr><th>Ekstra</th><th>&nbsp;</th></tr>
-        <tr><td>Flyplasskode i FLYPLASS.TXT skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Kombinasjonen av fraflyplass og tilflyplass i FLYRUTE.TXT skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Flightnr i FLYGNING.TXT skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Flyplasskode for fraflyplass i FLYRUTE.TXT skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Flyplasskode for tilflyplass i FLYRUTE.TXT skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Kombinasjonen av fraflyplass og tilflyplass i FLYGNING.TXT skal være registrert i FLYRUTE.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Validering av dato i FLYGNING.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flyplasskode i 'Registrer flyplass' skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Kombinasjonen av fraflyplass og tilflyplass i 'Registrer flyrute' skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flightnr i 'Registrer flygning' skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flyplasskode for fraflyplass i 'Registrer flyrute' skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flyplasskode for tilflyplass i 'Registrer flyrute' skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Kombinasjonen av fraflyplass og tilflyplass i 'Registrer flygning' skal være registrert i FLYRUTE.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Validering av dato i 'Registrer flygning'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        <tr><th>Smisking</th><th>&nbsp;</th></tr>
+        <tr><td>Asynkron kommunikasjon (registrer flygning)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flyplasskode i 'Avganger' er registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flyplasskode i 'Ankomster' er registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
       </table>
     </div>
   </div>
