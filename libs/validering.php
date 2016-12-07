@@ -133,6 +133,7 @@ function validerFlightnrUnik($flightnr) {
   return $lovligFlightnrUnik;
 }
 
+/*
 function validerFlygningFlyrute($flyrute) {
   $lovligFlyrute = false;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er registrert i FLYRUTE.TXT
@@ -146,6 +147,7 @@ function validerFlygningFlyrute($flyrute) {
   // Returner verdi for valideringen
   return $lovligFlyrute;
 }
+*/
 
 function validerDato($dato) {
   $lovligDato = false;
@@ -219,9 +221,11 @@ function validerFlygning() {
   if(!$lovligFlightnrUnik) {
     $feilmelding .= "Flightnr finnes allerede i database. (må være unik)<br />\n";
   }
+  /*
   if(!$lovligFlyrute) {
     $feilmelding .= "Flyrute er ikke registrert i databasen.<br />\n";
   }
+  */
   if(!$lovligDato) {
     $feilmelding .= "Dato er ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
   }
