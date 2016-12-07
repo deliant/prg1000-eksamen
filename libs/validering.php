@@ -210,6 +210,7 @@ function validerFlygning() {
   $dato = trim($_POST["dato"]);
   $lovligFlightnrFormat = validerFlightnrFormat($flightnr);
   $lovligFlightnrUnik = validerFlightnrUnik($flightnr);
+  $lovligFlyrute = validerFLygningFlyrute($flyrute);
   $lovligDato = validerDato($dato);
   $feilmelding = "";
   if(!$lovligFlightnrFormat) {
