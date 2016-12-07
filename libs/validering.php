@@ -25,7 +25,7 @@ function validerFlyplassFormat($flyplasskode) {
 function validerFlyplassUnik($flyplasskode) {
   $lovligFlyplassUnik = true;
   // Sjekk at flyplasskode er unik
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -43,7 +43,7 @@ function validerFlyplassUnik($flyplasskode) {
 function validerFlyruteFra($fraflyplass) {
   $lovligFlyruteFra = false;
   // Sjekk at flyplasskode for fraflyplass er registrert i FLYPLASS.TXT
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -61,7 +61,7 @@ function validerFlyruteFra($fraflyplass) {
 function validerFlyruteTil($tilflyplass) {
   $lovligFlyruteTil = false;
   // Sjekk at flyplasskode for tilflyplass er registrert i FLYPLASS.TXT
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -79,7 +79,7 @@ function validerFlyruteTil($tilflyplass) {
 function validerFlyruteUnik($fraflyplass, $tilflyplass) {
   $lovligFlyruteUnik = true;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er unik
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -118,7 +118,7 @@ function validerFlightnrFormat($flightnr) {
 function validerFlightnrUnik($flightnr) {
   $lovligFlightnrUnik = true;
   // Sjekk at flightnr er unik
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flygning.txt", "r") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flygning.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -136,7 +136,7 @@ function validerFlightnrUnik($flightnr) {
 function validerFlygningFlyrute($fraflyplass, $tilflyplass) {
   $lovligFlyrute = false;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er registrert i FLYRUTE.TXT
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r") or die("<div class='alert alert-success' role='alert'>Kan ikke åpne filen</div>");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
