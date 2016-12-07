@@ -16,7 +16,7 @@ function selectAnkomst() {
       }
     }
   }
-  // Lukk filen flygning.txt
+  // Lukk filen flyplass.txt
   fclose($fil);
 }
 
