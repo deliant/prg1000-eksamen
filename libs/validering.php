@@ -208,11 +208,11 @@ function validerFlyplass() {
 
 function validerFlygning() {
   $flightnr = trim($_POST["flightnr"]);
-  $flyrute = trim($_POST["flyrute"]);
+  //$flyrute = trim($_POST["flyrute"]);
   $dato = trim($_POST["dato"]);
   $lovligFlightnrFormat = validerFlightnrFormat($flightnr);
   $lovligFlightnrUnik = validerFlightnrUnik($flightnr);
-  $lovligFlyrute = validerFLygningFlyrute($flyrute);
+  //$lovligFlyrute = validerFlygningFlyrute($flyrute);
   $lovligDato = validerDato($dato);
   $feilmelding = "";
   if(!$lovligFlightnrFormat) {
