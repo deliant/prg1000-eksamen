@@ -27,7 +27,7 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bjarum Airlines</a>
+      <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Bjarum Airlines"></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php">Forsiden</a></li>
@@ -76,7 +76,7 @@
     </div>
     <div class="panel-body">
       <form method="post" id="regflygning" name="regflygning" onsubmit="return validerFlyrute()" action="">
-        <label>Flightnr:</label><input type="text" id="flightnr" name="flightnr" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
+        <label>Flightnr:</label><input type="text" id="flightnr" name="flightnr" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="storeBokstaver(this)" onkeyup="storeBokstaver(this)" required /><br />
         <label>Flyrute:</label><select name="flyrute">
           <?php
           include("libs/reg-flygning.php");

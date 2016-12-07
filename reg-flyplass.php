@@ -27,7 +27,7 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bjarum Airlines</a>
+      <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Bjarum Airlines"></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php">Forsiden</a></li>
@@ -76,7 +76,7 @@
     </div>
     <div class="panel-body">
       <form method="post" id="regflyplass" name="regflyplass" onsubmit="return validerFlyplasskode()" action="">
-        <label>Flyplasskode:</label><input type="text" id="flyplasskode" name="flyplasskode" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
+        <label>Flyplasskode:</label><input type="text" id="flyplasskode" name="flyplasskode" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="storeBokstaver(this)" onkeyup="storeBokstaver(this)" required /><br />
         <label>Flyplassnavn:</label><input type="text" id="flyplassnavn" name="flyplassnavn" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
         <label>&nbsp;</label><input type="submit" value="Registrer" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
       </form>

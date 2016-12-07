@@ -28,7 +28,7 @@
       <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Bjarum Airlines"></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li class="active"><a href="index.php">Forsiden</a></li>
+      <li><a href="index.php">Forsiden</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flyplasser
@@ -66,7 +66,7 @@
 </nav>
 <div class="container">
   <div class="page-header">
-    <h1>Bjarum Airlines <small>Forsiden</small></h1>
+    <h1>Bjarum Airlines <small>Sjekkliste</small></h1>
   </div>
   <div class="panel panel-default">
     <!-- Default panel contents -->
@@ -74,10 +74,32 @@
       <h3 class="panel-title">Ølgruppa</h3>
     </div>
     <div class="panel-body">
-      <div class="alert alert-danger" role="alert">PHP feilmeldinger vises i rød boks.</div>
-      <div class="alert alert-success" role="alert">PHP bekreftelser vises i grønn boks.</div>
-      <div class="alert-danger" role="alert">Javascript valideringer vises i rød bakgrunn.</div><br />
-      <div class="alert-info" role="alert">Javascript ajax vises i blå bakgrunn.</div>
+      <!-- Table -->
+      <table class="table-hover" width="100%">
+        <tr><th>>Krav</th><th>Realisering</th></tr>
+        <tr><td>Vis flyplasser</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Registrer flyplass</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Vis flyruter</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Registrer flyrute</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Vis flygninger</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Registrer flygning</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Vis ankomster</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Vis avganger</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>HTML5 validering av inputfelt</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>PHP validering av inputfelt</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>JS validering av inputfelt</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>JS hendelser (fokus/mistet fokus, mus inn/mus ut)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Asynkron kommunikasjon (registrer flyrute)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Menybasert applikasjon med stilark</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><th>Ekstra</th><th>&nbsp;</th></tr>
+        <tr><td>Flyplasskode i FLYPLASS.TXT skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Kombinasjonen av fraflyplass og tilflyplass i FLYRUTE.TXT skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flightnr i FLYGNING.TXT skal være unik</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flyplasskode for fraflyplass i FLYRUTE.TXT skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Flyplasskode for tilflyplass i FLYRUTE.TXT skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Kombinasjonen av fraflyplass og tilflyplass i FLYGNING.TXT skal være registrert i FLYRUTE.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Validering av dato i FLYGNING.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+      </table>
     </div>
   </div>
 </div>

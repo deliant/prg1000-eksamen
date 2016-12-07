@@ -25,7 +25,7 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bjarum Airlines</a>
+      <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Bjarum Airlines"></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php">Forsiden</a></li>

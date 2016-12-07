@@ -1,5 +1,5 @@
 function fokus(element) {
-  element.style.background="yellow";
+  element.style.background="#dfdfdf";
 }
 
 function mistetFokus(element) {
