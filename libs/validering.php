@@ -14,7 +14,7 @@ function validerFlyplassFormat($flyplasskode) {
     $tegn1 = substr($flyplasskode,0,1);
     $tegn2 = substr($flyplasskode,1,1);
     $tegn3 = substr($flyplasskode,2,1);
-    if ($tegn1 < "a" || $tegn1 > "z" || $tegn2 < "a" || $tegn2 > "z" || $tegn3 < "a" || $tegn3 > "z") {
+    if ($tegn1 < "A" || $tegn1 > "Z" || $tegn2 < "A" || $tegn2 > "Z" || $tegn3 < "A" || $tegn3 > "Z") {
       $lovligFlyplassFormat = false;
     }
   }
@@ -25,7 +25,7 @@ function validerFlyplassFormat($flyplasskode) {
 function validerFlyplassUnik($flyplasskode) {
   $lovligFlyplassUnik = true;
   // Sjekk at flyplasskode er unik
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flyplass.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -43,7 +43,7 @@ function validerFlyplassUnik($flyplasskode) {
 function validerFlyruteFra($fraflyplass) {
   $lovligFlyruteFra = false;
   // Sjekk at flyplasskode for fraflyplass er registrert i FLYPLASS.TXT
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flyplass.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -61,7 +61,7 @@ function validerFlyruteFra($fraflyplass) {
 function validerFlyruteTil($tilflyplass) {
   $lovligFlyruteTil = false;
   // Sjekk at flyplasskode for tilflyplass er registrert i FLYPLASS.TXT
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flyplass.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -79,7 +79,7 @@ function validerFlyruteTil($tilflyplass) {
 function validerFlyruteUnik($fraflyplass, $tilflyplass) {
   $lovligFlyruteUnik = true;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er unik
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flyrute.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -107,7 +107,7 @@ function validerFlightnrFormat($flightnr) {
     $tegn3 = substr($flightnr,2,1);
     $tegn4 = substr($flightnr,3,1);
     $tegn5 = substr($flightnr,4,1);
-    if ($tegn1 < "a" || $tegn1 > "z" || $tegn2 < "a" || $tegn2 > "z" || $tegn3 < "0" || $tegn3 > "9" || $tegn4 < "0" || $tegn4 > "9" || $tegn5 < "0" || $tegn5 > "9") {
+    if ($tegn1 < "A" || $tegn1 > "Z" || $tegn2 < "A" || $tegn2 > "Z" || $tegn3 < "0" || $tegn3 > "9" || $tegn4 < "0" || $tegn4 > "9" || $tegn5 < "0" || $tegn5 > "9") {
       $lovligFlightnrFormat = false;
     }
   }
@@ -118,7 +118,7 @@ function validerFlightnrFormat($flightnr) {
 function validerFlightnrUnik($flightnr) {
   $lovligFlightnrUnik = true;
   // Sjekk at flightnr er unik
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flygning.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flygning.txt", "r");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -136,7 +136,7 @@ function validerFlightnrUnik($flightnr) {
 function validerFlygningFlyrute($fraflyplass, $tilflyplass) {
   $lovligFlyrute = false;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er registrert i FLYRUTE.TXT
-  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flyrute.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r");
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
@@ -194,7 +194,7 @@ function validerFlyplass() {
   $lovligFlyplassUnik = validerFlyplassUnik($flyplasskode);
   $feilmelding = "";
   if(!$lovligFlyplassFormat) {
-    $feilmelding .= "Formatet på flyplass er feil. Må være tre små bokstaver, ingen tall.<br />\n";
+    $feilmelding .= "Formatet på flyplass er feil. Må være tre store bokstaver, ingen tall.<br />\n";
   }
   if(!$lovligFlyplassUnik) {
     $feilmelding .= "Flyplasskoden finnes allerede i databasen. (må være unik)";
@@ -219,7 +219,7 @@ function validerFlygning() {
   $lovligDato = validerDato($dato);
   $feilmelding = "";
   if(!$lovligFlightnrFormat) {
-    $feilmelding .= "Formatet på flightnr er feil. Må være to små bokstaver og tre tall.<br />\n";
+    $feilmelding .= "Formatet på flightnr er feil. Må være to store bokstaver og tre tall.<br />\n";
   }
   if(!$lovligFlightnrUnik) {
     $feilmelding .= "Flightnr finnes allerede i database. (må være unik)<br />\n";
