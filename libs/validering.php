@@ -133,15 +133,24 @@ function validerFlightnrUnik($flightnr) {
   return $lovligFlightnrUnik;
 }
 
-function validerFlygningFlyrute($fraflyplass, $tilflyplass) {
+function validerFlygningFlyrute($flyrute) {
   $lovligFlyrute = false;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er registrert i FLYRUTE.TXT
   $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
+  /*
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
       $tekst = explode(';', $tekstlinje);
       $tekst = array_map('trim', $tekst);
       if($tekst[0] == $fraflyplass && $tekst[1] == $tilflyplass) {
+        $lovligFlyrute = true;
+      }
+    }
+  }
+  */
+  while($tekstlinje = fgets($fil)) {
+    if($tekstlinje != "") {
+      if($tekstlinje == $flyrute) {
         $lovligFlyrute = true;
       }
     }
@@ -210,12 +219,11 @@ function validerFlyplass() {
 
 function validerFlygning() {
   $flightnr = trim($_POST["flightnr"]);
-  $fraflyplass = trim($_POST["fraflyplass"]);
-  $tilflyplass = trim($_POST["tilflyplass"]);
+  $flyrute = trim($_POST["flyrute"]);
   $dato = trim($_POST["dato"]);
   $lovligFlightnrFormat = validerFlightnrFormat($flightnr);
   $lovligFlightnrUnik = validerFlightnrUnik($flightnr);
-  $lovligFlyrute = validerFlygningFlyrute($fraflyplass, $tilflyplass);
+  $lovligFlyrute = validerFlygningFlyrute($flyrute);
   $lovligDato = validerDato($dato);
   $feilmelding = "";
   if(!$lovligFlightnrFormat) {

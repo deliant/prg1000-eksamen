@@ -76,24 +76,26 @@
     </div>
     <div class="panel-body">
       <form method="post" id="regflygning" name="regflygning" onsubmit="return validerFlyrute()" action="">
-        <label>Flightnr</label><input type="text" id="flightnr" name="flightnr" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
-        <label>Fra flyplass:</label><input type="text" id="fraflyplass" name="fraflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
-        <label>Til flyplass:</label><input type="text" id="tilflyplass" name="tilflyplass" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
+        <label>Flightnr:</label><input type="text" id="flightnr" name="flightnr" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
+        <label>Flyrute:</label><select name="flyrute">
+          <?php
+          include("libs/reg-flygning.php");
+          selectFlyrute();
+          ?>
+        </select><br />
         <label>Dato:</label><input type="text" id="dato" name="dato" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" required /><br />
         <label>&nbsp;</label><input type="submit" value="Registrer" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
       </form>
       <?php
-      include("libs/reg-flygning.php");
       include("libs/validering.php");
       if(isset($_POST["submit"])) {
         $flightnr = trim($_POST["flightnr"]);
-        $fraflyplass = trim($_POST["fraflyplass"]);
-        $tilflyplass = trim($_POST["tilflyplass"]);
+        $flyrute = trim($_POST["flyrute"]);
         $dato = trim($_POST["dato"]);
-        if(!empty($flightnr) && !empty($fraflyplass) && !empty($tilflyplass) && !empty($dato)) {
+        if(!empty($flightnr) && !empty($flyrute) && !empty($dato)) {
           $lovligFlygning = validerFlygning();
           if($lovligFlygning) {
-            regFlygning($flightnr, $fraflyplass, $tilflyplass, $dato);
+            regFlygning($flightnr, $flyrute, $dato);
           }
         }
         else {
