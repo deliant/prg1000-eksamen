@@ -32,7 +32,6 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php">Forsiden</a></li>
-      <li class="divider-vertical"></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flyplasser
@@ -43,7 +42,6 @@
           <li><a href="reg-flyplass.php">Registrer</a></li>
         </ul>
       </li>
-      <li class="divider-vertical"></li>
       <li class="dropdown active">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flyruter
@@ -54,7 +52,6 @@
           <li><a href="reg-flyrute.php">Registrer</a></li>
         </ul>
       </li>
-      <li class="divider-vertical"></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flygninger
@@ -65,9 +62,7 @@
           <li><a href="reg-flygning.php">Registrer</a></li>
         </ul>
       </li>
-      <li class="divider-vertical"></li>
       <li><a href="vis-avgang.php">Avganger</a></li>
-      <li class="divider-vertical"></li>
       <li><a href="vis-ankomst.php">Ankomster</a></li>
     </ul>
   </div>
@@ -108,5 +103,13 @@
     </div>
   </div>
 </div>
+<footer class="footer">
+  <div class="container">
+    <p class="text">
+      Laget av ølgruppa - <a href="kravspek.php">Sjekkliste til kravspek</a><br />
+      Magnus Nordhagen, Steffen Unneberg, Christian Thun og Marius Norheim
+    </p>
+  </div>
+</footer>
 </body>
 </html>
