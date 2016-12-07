@@ -76,7 +76,7 @@
     <div class="panel-body">
       <!-- Table -->
       <table class="table-hover" width="100%">
-        <tr><th>>Krav</th><th>Realisering</th></tr>
+        <tr><th>Krav</th><th>Realisering</th></tr>
         <tr><td>Vis flyplasser</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>Registrer flyplass</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>Vis flyruter</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
