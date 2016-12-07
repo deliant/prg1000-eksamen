@@ -25,7 +25,7 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bjarum Airlines</a>
+      <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="Bjarum Airlines"></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href="index.php">Forsiden</a></li>
@@ -64,6 +64,23 @@
     </ul>
   </div>
 </nav>
+<div class="container">
+  <div class="page-header">
+    <h1>Bjarum Airlines <small>Forsiden</small></h1>
+  </div>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h3 class="panel-title">Ølgruppa</h3>
+    </div>
+    <div class="panel-body">
+      <div class="alert alert-danger" role="alert">PHP feilmeldinger vises i rød boks.</div>
+      <div class="alert alert-success" role="alert">PHP bekreftelser vises i grønn boks.</div>
+      <div class="alert-danger" role="alert">Javascript valideringer vises i rød bakgrunn.</div><br />
+      <div class="alert-info" role="alert">Javascript ajax vises i blå bakgrunn.</div>
+    </div>
+  </div>
+</div>
 <footer class="footer">
   <div class="container">
     <p class="text">
