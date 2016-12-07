@@ -1,7 +1,7 @@
 <?php
 function visFlygning() {
   // Åpne filen flygning.txt
-  $fil = fopen("data/flygning.txt", "r");
+  $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flygning.txt", "r");
   // Skriv data i flygning.txt til en array og lag HTML table
   print("<tr><th>Flightnr</th><th>Fra flyplass</th><th>Til flyplass</th><th>Dato</th></tr>");
   while($tekstlinje = fgets($fil)) {

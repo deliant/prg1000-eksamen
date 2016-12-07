@@ -82,13 +82,17 @@
     </div>
     <div class="panel-body">
       <form method="post" id="visankomst" name="visankomst" onsubmit="return validerFlyplasskode()" action="">
-        <label>Flyplasskode:</label><input type="text" id="flyplasskode" name="flyplasskode" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="smaaBokstaver(this)" onkeyup="smaaBokstaver(this)" required /><br />
+        <label>Flyplass:</label><select name="flyplasskode">
+          <?php
+          include("libs/vis-ankomst.php");
+          selectAnkomst();
+          ?>
+        </select><br />
         <label>&nbsp;</label><input type="submit" value="Søk" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
       </form>
       <!-- Table -->
       <table class="table-hover" width="100%">
         <?php
-        include("libs/vis-ankomst.php");
         if(isset($_POST["submit"])) {
           $flyplasskode = trim($_POST["flyplasskode"]);
           if(!empty($flyplasskode)) {

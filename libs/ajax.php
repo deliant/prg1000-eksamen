@@ -1,7 +1,7 @@
 <?php
 $flyplasskode = trim($_GET["flyplasskode"]);
 // Åpne filen flyrute.txt
-$fil = fopen("../data/flyrute.txt", "r");
+$fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prb10v11/flyrute.txt", "r");
 // Skriv data i flyrute.txt til en array og lag HTML table
 print("<table width='100%'>");
 print("<tr><th>Fra flyplass</th><th>Til flyplass</th></tr>");
