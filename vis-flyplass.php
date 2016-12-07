@@ -29,6 +29,7 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php">Forsiden</a></li>
+      <li class="dropdown active">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           Flyplasser
           <b class="caret"></b>
