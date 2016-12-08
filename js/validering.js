@@ -48,12 +48,8 @@ function validerFlightnr(flightnr) {
 
 function validerDato(dato) {
   var regEx = /^\d{4}-\d{2}-\d{2}$/;
-  var d;
   var lovligDato = false;
   if(dato.match(regEx)) {
-    lovligDato = true;
-  }
-  if((d = new Date(dato))|0) {
     lovligDato = true;
   }
   return lovligDato;
