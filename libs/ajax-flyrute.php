@@ -11,7 +11,7 @@ while ($tekstlinje = fgets($fil)) {
     $tekst = array_map('trim', $tekst);
     if($tekst[0] == $flyplasskode) {
       foreach ($tekst as $array) {
-        if(stripos($flyplasskode, $array) !== FALSE) {
+        if(stripos($array, $flyplasskode) !== FALSE) {
           print("<tr><td>$tekst[0]</td><td>$tekst[1]</td></tr>");
         }
       }
