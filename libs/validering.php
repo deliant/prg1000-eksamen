@@ -240,7 +240,7 @@ function validerFlygning() {
   if(!$lovligDato) {
     $feilmelding .= "Dato er ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
   }
-  if($lovligFlightnrFormat && $lovligFlightnrUnik && $locligFlyrute && $lovligDato) {
+  if($lovligFlightnrFormat && $lovligFlightnrUnik && $lovligFlyrute && $lovligDato) {
     return true;
   }
   else {
