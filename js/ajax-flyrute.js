@@ -10,6 +10,6 @@ function vis(flyplasskode) {
       document.getElementById("respons").innerHTML=foresporsel.responseText;
     }
   }
-  foresporsel.open("GET", "libs/ajax.php?flyplasskode="+flyplasskode);
+  foresporsel.open("GET", "libs/ajax-flyrute.php?flyplasskode="+flyplasskode);
   foresporsel.send();
 }
