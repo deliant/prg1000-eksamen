@@ -76,7 +76,7 @@
       <h3 class="panel-title">Fyll inn</h3>
     </div>
     <div class="panel-body">
-      <form method="post" id="regflygning" name="regflygning" onsubmit="return validerFlyrute()" action="">
+      <form method="post" id="regflygning" name="regflygning" onsubmit="return validerFlygning()" action="">
         <label>Flightnr:</label><input type="text" id="flightnr" name="flightnr" onmouseover="musInn(this)" onmouseout="musUt()" onfocus="fokus(this)" onblur="mistetFokus(this)" onchange="storeBokstaver(this)" onkeyup="storeBokstaver(this)" required /><br />
         <label>Flyrute:</label><select name="flyrute" onclick="vis(this.value)">
           <?php

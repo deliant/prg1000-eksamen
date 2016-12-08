@@ -80,7 +80,7 @@ function validerFlyruteLik($fraflyplass, $tilflyplass) {
   $lovligFlyruteLik = true;
   // Sjekk at avgang og destinasjon ikke er samme flyplass
   if($fraflyplass == $tilflyplass) {
-    $lovligFlyrutLik = false;
+    $lovligFlyruteLik = false;
   }
   // Returner verdi for valideringen
   return $lovligFlyruteLik;
@@ -179,7 +179,7 @@ function validerFlyrute() {
   $lovligFlyruteUnik = validerFlyruteUnik($fraflyplass, $tilflyplass);
   $feilmelding = "";
   if(!$lovligFlyruteLik) {
-    $feilmelding .= "Avgang og destinasjon kan ikke være samme flyplass.<br />\n"
+    $feilmelding .= "Avgang og destinasjon kan ikke være samme flyplass.<br />\n";
   }
   if(!$lovligFlyruteFra) {
     $feilmelding .= "Flyplassen i feltet 'Fra flyplass' finnes ikke i databasen.<br />\n";
@@ -238,9 +238,9 @@ function validerFlygning() {
     $feilmelding .= "Flyrute er ikke registrert i databasen.<br />\n";
   }
   if(!$lovligDato) {
-    $feilmelding .= "Dato er ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
+    $feilmelding .= "Dato er ikke gyldig eller ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
   }
-  if($lovligFlightnrFormat && $lovligFlightnrUnik && $locligFlyrute && $lovligDato) {
+  if($lovligFlightnrFormat && $lovligFlightnrUnik && $lovligFlyrute && $lovligDato) {
     return true;
   }
   else {
