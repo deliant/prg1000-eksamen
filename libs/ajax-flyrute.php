@@ -10,10 +10,8 @@ while ($tekstlinje = fgets($fil)) {
     $tekst = explode(';', $tekstlinje);
     $tekst = array_map('trim', $tekst);
     if($tekst[0] == $flyplasskode) {
-      foreach ($tekst as $array) {
-        if(stripos($array, $flyplasskode) !== FALSE) {
-          print("<tr><td>$tekst[0]</td><td>$tekst[1]</td></tr>");
-        }
+      if(stripos($tekstlinje, $flyplasskode) !== FALSE) {
+        print("<tr><td>$tekst[0]</td><td>$tekst[1]</td></tr>");
       }
     }
   }
