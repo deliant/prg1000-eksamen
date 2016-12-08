@@ -179,7 +179,7 @@ function validerFlyrute() {
   $lovligFlyruteUnik = validerFlyruteUnik($fraflyplass, $tilflyplass);
   $feilmelding = "";
   if(!$lovligFlyruteLik) {
-    $feilmelding .= "Avgang og destinasjon kan ikke være samme flyplass.<br />\n"
+    $feilmelding .= "Avgang og destinasjon kan ikke være samme flyplass.<br />\n";
   }
   if(!$lovligFlyruteFra) {
     $feilmelding .= "Flyplassen i feltet 'Fra flyplass' finnes ikke i databasen.<br />\n";
