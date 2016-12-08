@@ -48,10 +48,21 @@ function validerFlightnr(flightnr) {
 
 function validerDato(dato) {
   var regEx = /^\d{4}-\d{2}-\d{2}$/;
-  var lovligDato = false;
-  if(dato.match(regEx)) {
-    lovligDato = true;
+  var aar = new Date().getFullYear();
+  var lovligDato = true;
+  if(!dato.match(regEx)) {
+  lovligDato = false;
   }
+  if(regs = dato(regEx)) {
+    if(regs[1] < 1 || regs[1] > 31) {
+      lovligDato = false;
+    }
+    if(regs[2] < 1 || regs[2] > 12) {
+      lovligDato = false;
+    }
+    if(regs[3] < 2016 || regs[3] > (aar + 2) {
+      lovligDato = false;
+    }
   return lovligDato;
 }
 
