@@ -21,11 +21,21 @@ function selectFlyplass() {
 }
 
 function regFlyrute($fraflyplass, $tilflyplass) {
+  $beggeveier = false;
+  if(isset($_POST["beggeveier"])) {
+    $beggeveier = $_POST["beggeveier"];
+  }
   // Åpne filen flyrute.txt
   $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "a") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   // Skriv til filen flyrute.txt
   fwrite($fil, "$fraflyplass;$tilflyplass\n");
-  print("<div class='alert alert-success' role='alert'>Ruten " . $fraflyplass . " - "  . $tilflyplass . " registrert i flyrutedatabasen.</div>");
+  if($beggeveier) {
+    fwrite($fil, "$tilflyplass;$fraflyplass\n");
+    print("<div class='alert alert-success' role='alert'>Ruten " . $fraflyplass . " - "  . $tilflyplass . " registrert tur-retur i flyrutedatabasen.</div>");
+  }
+  else {
+    print("<div class='alert alert-success' role='alert'>Ruten " . $fraflyplass . " - "  . $tilflyplass . " registrert i flyrutedatabasen.</div>");
+  }
   // Lukk filen flyrute.txt
   fclose($fil);
 }

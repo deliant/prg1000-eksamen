@@ -87,6 +87,7 @@
           selectFlyplass();
           ?>
         </select><br />
+        <label>Legg til rute begge veier?</label><input type="checkbox" name="beggeveier" value="true"><br />
         <label>&nbsp;</label><input type="submit" value="Registrer" id="submit" name="submit"><input type="reset" value="Nullstill" id="nullstill" name="nullstill" onclick="fjernMelding()"><br /><br />
       </form>
       <?php
