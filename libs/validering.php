@@ -76,6 +76,16 @@ function validerFlyruteTil($tilflyplass) {
   return $lovligFlyruteTil;
 }
 
+function validerFlyruteLik($fraflyplass, $tilflyplass) {
+  $lovligFlyruteLik = true;
+  // Sjekk at avgang og destinasjon ikke er samme flyplass
+  if($fraflyplass == $tilflyplass) {
+    $lovligFlyrutLik = false;
+  }
+  // Returner verdi for valideringen
+  return $lovligFlyruteLik;
+}
+
 function validerFlyruteUnik($fraflyplass, $tilflyplass) {
   $lovligFlyruteUnik = true;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er unik
@@ -133,13 +143,13 @@ function validerFlightnrUnik($flightnr) {
   return $lovligFlightnrUnik;
 }
 
-/*
 function validerFlygningFlyrute($flyrute) {
   $lovligFlyrute = false;
   // Sjekk at kombinasjonen fraflyplass og tilflyplass er registrert i FLYRUTE.TXT
   $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyrute.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
-  while($tekstlinje = fgets($fil)) {
-    if($tekstlinje == $flyrute) {
+  while ($tekstlinje = fgets($fil)) {
+    $tekstlinje = trim($tekstlinje);
+    if ($tekstlinje == $flyrute) {
       $lovligFlyrute = true;
     }
   }
@@ -147,7 +157,6 @@ function validerFlygningFlyrute($flyrute) {
   // Returner verdi for valideringen
   return $lovligFlyrute;
 }
-*/
 
 function validerDato($dato) {
   $lovligDato = false;
@@ -166,8 +175,12 @@ function validerFlyrute() {
   $tilflyplass = trim($_POST["tilflyplass"]);
   $lovligFlyruteFra = validerFlyruteFra($fraflyplass);
   $lovligFlyruteTil = validerFlyruteTil($tilflyplass);
+  $lovligFlyruteLik = validerFlyruteLik($fraflyplass, $tilflyplass);
   $lovligFlyruteUnik = validerFlyruteUnik($fraflyplass, $tilflyplass);
   $feilmelding = "";
+  if(!$lovligFlyruteLik) {
+    $feilmelding .= "Avgang og destinasjon kan ikke være samme flyplass.<br />\n"
+  }
   if(!$lovligFlyruteFra) {
     $feilmelding .= "Flyplassen i feltet 'Fra flyplass' finnes ikke i databasen.<br />\n";
   }
@@ -177,7 +190,7 @@ function validerFlyrute() {
   if(!$lovligFlyruteUnik) {
     $feilmelding .= "Flyruten finnes allerede i databasen. (må være unik)";
   }
-  if($lovligFlyruteFra && $lovligFlyruteTil && $lovligFlyruteUnik) {
+  if($lovligFlyruteFra && $lovligFlyruteTil && $lovligFlyruteLik && $lovligFlyruteUnik) {
     return true;
   }
   else {
@@ -208,11 +221,11 @@ function validerFlyplass() {
 
 function validerFlygning() {
   $flightnr = trim($_POST["flightnr"]);
-  //$flyrute = trim($_POST["flyrute"]);
+  $flyrute = trim($_POST["flyrute"]);
   $dato = trim($_POST["dato"]);
   $lovligFlightnrFormat = validerFlightnrFormat($flightnr);
   $lovligFlightnrUnik = validerFlightnrUnik($flightnr);
-  //$lovligFlyrute = validerFlygningFlyrute($flyrute);
+  $lovligFlyrute = validerFlygningFlyrute($flyrute);
   $lovligDato = validerDato($dato);
   $feilmelding = "";
   if(!$lovligFlightnrFormat) {
@@ -221,15 +234,13 @@ function validerFlygning() {
   if(!$lovligFlightnrUnik) {
     $feilmelding .= "Flightnr finnes allerede i database. (må være unik)<br />\n";
   }
-  /*
   if(!$lovligFlyrute) {
     $feilmelding .= "Flyrute er ikke registrert i databasen.<br />\n";
   }
-  */
   if(!$lovligDato) {
     $feilmelding .= "Dato er ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
   }
-  if($lovligFlightnrFormat && $lovligFlightnrUnik && $lovligDato) {
+  if($lovligFlightnrFormat && $lovligFlightnrUnik && $locligFlyrute && $lovligDato) {
     return true;
   }
   else {
