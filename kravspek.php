@@ -89,7 +89,7 @@
         <tr><td>PHP validering av inputfelt</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>JS validering av inputfelt</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>JS hendelser (fokus/mistet fokus, mus inn/mus ut)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Asynkron kommunikasjon (registrer flyrute)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Asynkron kommunikasjon med liste for avganger fra aktuell flyplass i 'Registrer flyrute'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>Menybasert applikasjon med stilark</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
         <tr><th>Ekstra</th><th>&nbsp;</th></tr>
@@ -102,9 +102,9 @@
         <tr><td>Validering av dato i 'Registrer flygning'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
         <tr><th>Smisking</th><th>&nbsp;</th></tr>
-        <tr><td>Asynkron kommunikasjon (registrer flygning)</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Flyplasskode i 'Avganger' er registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Flyplasskode i 'Ankomster' er registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Asynkron kommunikasjon med liste for flygninger imellom aktuell rute i 'Registrer flygning'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>En liste over tilgjengelige flyplasser i 'Avganger' printes ut fra FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>En liste over tilgjengelige flyplasser i 'Ankomster' printes ut fra FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
       </table>
     </div>
   </div>
