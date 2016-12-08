@@ -48,13 +48,13 @@ function validerFlightnr(flightnr) {
 
 function validerDato(dato) {
   var regEx = /^\d{4}-\d{2}-\d{2}$/;
-  var lovligDato = true;
-  if(!dato.match(regEx)) {
-    lovligDato = false;
-  }
   var d;
-  if(!((d = new Date(dato))|0)) {
-    lovligDato = false;
+  var lovligDato = false;
+  if(dato.match(regEx)) {
+    lovligDato = true;
+  }
+  if((d = new Date(dato))|0) {
+    lovligDato = true;
   }
   return lovligDato;
 }
@@ -64,11 +64,12 @@ function validerFlygning() {
   var dato = document.getElementById("dato").value;
   var lovligFlightnr = validerFlightnr(flightnr);
   var lovligDato = validerDato(dato);
+  var feilMelding = "";
   if(!flightnr) {
     feilMelding = "Flightnr ikke fyllt ut.<br />";
   }
   if(!dato) {
-    feilMelding = "Dato ikke fyllt ut.<br />";
+    feilMelding = feilMelding + "Dato ikke fyllt ut.<br />";
   }
   if(!lovligFlightnr) {
     feilMelding = feilMelding + "Formatet på flightnr er feil. Må være to store bokstaver og tre tall.<br />";
