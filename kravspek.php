@@ -106,6 +106,7 @@
         <tr><td>Javascript validering av datoformat</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>En liste over tilgjengelige flyplasser i 'Avganger' printes ut fra FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>En liste over tilgjengelige flyplasser i 'Ankomster' printes ut fra FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Sjekkboks for å legge til rute begge veier i 'Registrer flyrute'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
       </table>
     </div>
   </div>
