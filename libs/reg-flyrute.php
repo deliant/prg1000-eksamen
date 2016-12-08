@@ -2,7 +2,6 @@
 function selectFlyplass() {
   // Åpne filen flyplass.txt
   $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flyplass.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
-  //$fil = fopen("data/flyplass.txt", "r") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   // Skriv data i flyplass.txt til en array og lag HTML select list
   while($tekstlinje = fgets($fil)) {
     if($tekstlinje != "") {
