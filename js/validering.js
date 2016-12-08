@@ -30,14 +30,8 @@ function validerFlyplasskode() {
 function validerFlightnr(flightnr) {
   var tegn1, tegn2, tegn3, tegn4, tegn5;
   var lovligFlightnr = true;
-  var feilMelding = "";
-  if(!flightnr) {
+  if(flightnr.length != 5) {
     lovligFlightnr = false;
-    feilMelding = feilMelding + "Flightnr ikke fyllt ut.<br />";
-  }
-  else if(flightnr.length != 5) {
-    lovligFlightnr = false;
-    feilMelding = feilMelding + "Flightnr har ikke riktig antall karakterer (5).<br />";
   }
   else {
     tegn1 = flightnr.substr(0,1);
@@ -47,7 +41,6 @@ function validerFlightnr(flightnr) {
     tegn5 = flightnr.substr(4,1);
     if(tegn1 < "A" || tegn1 > "Z" || tegn2 < "A" || tegn2 > "Z" || tegn3 < "0" || tegn3 > "9" || tegn4 < "0" || tegn4 > "9" ||  tegn5 < "0" || tegn5 > "9") {
       lovligFlightnr = false;
-      feilMelding = feilMelding + "Flightnr innholder andre karakterer enn A-Z eller tall (store bokstaver).<br />";
     }
   }
   return lovligFlightnr;
@@ -56,17 +49,14 @@ function validerFlightnr(flightnr) {
 function validerDato(dato) {
   var regEx = /^\d{4}-\d{2}-\d{2}$/;
   var lovligDato = true;
-  var feilMelding = "";
   if(!dato.match(regEx)) {
     lovligDato = false;
-    feilMelding = feilMelding + "Dato har ikke korrekt format (ÅÅÅÅ-MM-DD).<br />";
   }
   var d;
   if(!((d = new Date(dato))|0)) {
     lovligDato = false;
-    feilMelding = feilMelding + "Ikke gyldig dato. (kan ikke være bak i tid)";
   }
-  return d.toISOString().slice(0,10) == dato;
+  return lovligDato;
 }
 
 function validerFlygning() {
@@ -74,6 +64,18 @@ function validerFlygning() {
   var dato = document.getElementById("dato").value;
   var lovligFlightnr = validerFlightnr(flightnr);
   var lovligDato = validerDato(dato);
+  if(!flightnr) {
+    feilMelding = "Flightnr ikke fyllt ut.<br />";
+  }
+  if(!dato) {
+    feilMelding = "Dato ikke fyllt ut.<br />";
+  }
+  if(!lovligFlightnr) {
+    feilMelding = feilMelding + "Formatet på flightnr er feil. Må være to store bokstaver og tre tall.<br />";
+  }
+  if(!lovligDato) {
+    feilMelding = feilMelding + "Dato er ikke gyldig eller ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
+  }
   if(lovligFlightnr && lovligDato) {
     return true;
   }

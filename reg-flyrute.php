@@ -75,7 +75,7 @@
       <h3 class="panel-title">Fyll inn</h3>
     </div>
     <div class="panel-body">
-      <form method="post" id="regflyrute" name="regflyrute"  action="">
+      <form method="post" id="regflyrute" name="regflyrute" action="">
         <label>Fra flyplass:</label><select name="fraflyplass" onclick="vis(this.value)">
           <?php
           include("libs/reg-flyrute.php");
