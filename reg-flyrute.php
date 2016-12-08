@@ -10,7 +10,7 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-theme.css" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <script src="js/ajax.js"></script>
+  <script src="js/ajax-flyrute.js"></script>
   <script src="js/elements.js"></script>
   <script src="js/validering.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -1,3 +1,0 @@
-osl;Oslo Gardemoen
-trf;Oslo Torp
-stn;London Stansted

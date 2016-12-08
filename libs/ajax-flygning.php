@@ -10,16 +10,16 @@ while ($tekstlinje = fgets($fil)) {
     $tekst = explode(';', $tekstlinje);
     $rute = explode(';', $flyrute);
     $tekst = array_map('trim', $tekst);
+    $rute = array_map('trim', $rute);
+    $tekstlinje = trim($tekstlinje);
     if($rute[0] == $tekst[1] && $rute[1] == $tekst[2]) {
-      foreach ($tekst as $array) {
-        if(stripos($flyrute, $array) !== FALSE) {
-          print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><td>$tekst[2]</td><td>$tekst[3]</td></tr>");
-        }
+      if(stripos($tekstlinje, $flyrute) !== FALSE) {
+        print("<tr><td>$tekst[0]</td><td>$tekst[1]</td><td>$tekst[2]</td><td>$tekst[3]</td></tr>");
       }
     }
   }
 }
 print("</table>");
-// Lukk filen klasse.txt
+// Lukk filen flygning.txt
 fclose($fil);
 ?>

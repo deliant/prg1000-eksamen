@@ -19,6 +19,6 @@ while ($tekstlinje = fgets($fil)) {
   }
 }
 print("</table>");
-// Lukk filen klasse.txt
+// Lukk filen flyrute.txt
 fclose($fil);
 ?>

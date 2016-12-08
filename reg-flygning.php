@@ -105,6 +105,7 @@
       }
       ?>
       <div id="melding" class="alert-danger" role="alert"></div>
+      <div id="respons" class="alert-info" role="alert"></div>
     </div>
   </div>
 </div>

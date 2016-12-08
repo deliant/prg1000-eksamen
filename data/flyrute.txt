@@ -1,4 +1,0 @@
-osl;stn
-stn;osl
-trf;stn
-stn;trf
