@@ -12,7 +12,6 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <script src="js/ajax-flyrute.js"></script>
   <script src="js/elements.js"></script>
-  <script src="js/validering.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -76,7 +75,7 @@
       <h3 class="panel-title">Fyll inn</h3>
     </div>
     <div class="panel-body">
-      <form method="post" id="regflyrute" name="regflyrute" onsubmit="return validerFlyrute()" action="">
+      <form method="post" id="regflyrute" name="regflyrute"  action="">
         <label>Fra flyplass:</label><select name="fraflyplass" onclick="vis(this.value)">
           <?php
           include("libs/reg-flyrute.php");
