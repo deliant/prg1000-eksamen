@@ -80,7 +80,7 @@ function validerFlyruteLik($fraflyplass, $tilflyplass) {
   $lovligFlyruteLik = true;
   // Sjekk at avgang og destinasjon ikke er samme flyplass
   if($fraflyplass == $tilflyplass) {
-    $lovligFlyrutLik = false;
+    $lovligFlyruteLik = false;
   }
   // Returner verdi for valideringen
   return $lovligFlyruteLik;
