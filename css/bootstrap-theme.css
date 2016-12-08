@@ -608,10 +608,13 @@ label {
   width: 175px;
 }
 select {
+  margin: 1px 0;
+  height: 25px;
   width: 225px;
 }
 input[type="text"] {
   margin: 1px 0;
+  height: 25px;
   width: 225px;
 }
 
