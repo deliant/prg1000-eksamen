@@ -26,7 +26,7 @@ function regFlygning($flightnr, $flyrute, $dato) {
   // Skriv til filen flygning.txt
   fwrite($fil, "$flightnr;$flyrute;$dato\n");
   $flyrute = explode(";", $flyrute);
-  print("<div class='alert alert-success' role='alert'>Flygningen " . $flyrute[0] . " - " . $flyrute[1] ." (" . $flightnr . ") som utføres " . $dato . " registrert i flygningsdatabasen.</div>");
+  print("<div class='alert alert-success' role='alert'>Flygningen ". $flightnr ." på ruten  ". $flyrute[0] ." - ". $flyrute[1] ." som utføres ". $dato ." registrert i flygningsdatabasen.</div>");
   // Lukk filen flygning.txt
   fclose($fil);
 }
