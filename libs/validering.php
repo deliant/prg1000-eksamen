@@ -238,7 +238,7 @@ function validerFlygning() {
     $feilmelding .= "Flyrute er ikke registrert i databasen.<br />\n";
   }
   if(!$lovligDato) {
-    $feilmelding .= "Dato er ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
+    $feilmelding .= "Dato er ikke gyldig eller ikke fyllt ut i korrekt format (ÅÅÅÅ-MM-DD).";
   }
   if($lovligFlightnrFormat && $lovligFlightnrUnik && $lovligFlyrute && $lovligDato) {
     return true;
