@@ -25,7 +25,7 @@ function regFlygning($flightnr, $flyrute, $dato) {
   $fil = fopen("D:\\Sites\\home.hbv.no\\phptemp\\web-prg10v11/flygning.txt", "a") or die("<div class='alert alert-danger' role='alert'>Kan ikke åpne filen</div>");
   // Skriv til filen flygning.txt
   fwrite($fil, "$flightnr;$flyrute;$dato\n");
-  $flyrute = explode(";", $fil);
+  $flyrute = explode(";", $flyrute);
   print("<div class='alert alert-success' role='alert'>Flygningen " . $flyrute[0] . " - " . $flyrute[1] ." (" . $flightnr . ") som utføres " . $dato . " registrert i flygningsdatabasen.</div>");
   // Lukk filen flygning.txt
   fclose($fil);
