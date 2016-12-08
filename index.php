@@ -76,7 +76,7 @@
     <div class="panel-body">
       <div class="alert alert-danger" role="alert">PHP feilmeldinger vises i rød boks.</div>
       <div class="alert alert-success" role="alert">PHP bekreftelser vises i grønn boks.</div>
-      <div class="alert-danger" role="alert">Javascript valideringer vises i rød bakgrunn.</div><br />
+      <div class="alert-danger" role="alert">Javascript meldingerr vises i rød bakgrunn.</div><br />
       <div class="alert-info" role="alert">Javascript ajax vises i blå bakgrunn.</div>
     </div>
   </div>

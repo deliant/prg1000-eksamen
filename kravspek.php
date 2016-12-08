@@ -99,10 +99,11 @@
         <tr><td>Flyplasskode for fraflyplass i 'Registrer flyrute' skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>Flyplasskode for tilflyplass i 'Registrer flyrute' skal være registrert i FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>Kombinasjonen av fraflyplass og tilflyplass i 'Registrer flygning' skal være registrert i FLYRUTE.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
-        <tr><td>Validering av dato i 'Registrer flygning'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>PHP Validering av dato i 'Registrer flygning'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
         <tr><th>Smisking</th><th>&nbsp;</th></tr>
         <tr><td>Asynkron kommunikasjon med liste for flygninger imellom aktuell rute i 'Registrer flygning'</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
+        <tr><td>Javascript validering av datoformat</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>En liste over tilgjengelige flyplasser i 'Avganger' printes ut fra FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
         <tr><td>En liste over tilgjengelige flyplasser i 'Ankomster' printes ut fra FLYPLASS.TXT</td><td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td></tr>
       </table>
